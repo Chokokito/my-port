@@ -1,0 +1,10 @@
+@keyframes hello {
+  from {
+    opacity: 0%;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
