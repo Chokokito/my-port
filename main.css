@@ -2,104 +2,157 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import "resethtml.css";
 @import "keyframes.css";
+@import "mobile.css";
 
-:root {
-  --white: rgb(245, 243, 255);
-  --chokcolor: rgb(167, 79, 255);
-}
+@media only screen and (min-width: 768px) {
+  :root {
+    --white: rgb(245, 243, 255);
+    --chokcolor: rgb(167, 79, 255);
+  }
+  body {
+    background: rgb(30, 5, 117);
+    background: -moz-radial-gradient(
+      circle,
+      rgb(86, 44, 238) 27%,
+      rgba(39, 4, 99, 1) 57%,
+      rgba(0, 10, 61, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+      circle,
+      rgba(30, 5, 117, 1) 27%,
+      rgba(39, 4, 99, 1) 57%,
+      rgba(0, 10, 61, 1) 100%
+    );
+    background: radial-gradient(
+      circle,
+      rgba(30, 5, 117, 1) 27%,
+      rgb(110, 29, 74) 57%,
+      rgba(0, 10, 61, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e0575",endColorstr="#000a3d",GradientType=1);
+  }
 
-body {
-  background: rgb(30, 5, 117);
-  background: -moz-radial-gradient(
-    circle,
-    rgb(86, 44, 238) 27%,
-    rgba(39, 4, 99, 1) 57%,
-    rgba(0, 10, 61, 1) 100%
-  );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(30, 5, 117, 1) 27%,
-    rgba(39, 4, 99, 1) 57%,
-    rgba(0, 10, 61, 1) 100%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(30, 5, 117, 1) 27%,
-    rgb(110, 29, 74) 57%,
-    rgba(0, 10, 61, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e0575",endColorstr="#000a3d",GradientType=1);
-}
+  header {
+    display: flex;
+    color: rgb(245, 243, 255);
+    padding-bottom: 50px;
+    padding-top: 50px;
+    font-family: "Prompt";
+    font-size: 1.25rem;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-header {
-  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.7749474789915967) 30%,
-    rgba(22, 1, 57, 0) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.7749474789915967) 30%,
-    rgba(22, 1, 57, 0) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.7749474789915967) 30%,
-    rgba(22, 1, 57, 0) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#160139",GradientType=1);
-  background-repeat: no-repeat;
+  .name {
+    font-weight: 500;
+    color: var(--chokcolor);
+  }
 
-  color: rgb(245, 243, 255);
-  padding: 50px;
-  font-family: "Prompt";
-  font-size: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  line-height: 10px;
-  align-items: center;
-}
+  .logo {
+    width: 205px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-.name {
-  font-weight: 500;
-  color: var(--chokcolor);
-}
+  .logo img {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
 
-.logo img {
-  width: 3.75rem;
-  height: 3.75rem;
-}
+  .container {
+    animation-name: hello;
+    animation-duration: 3s;
 
-.container {
-  animation-name: hello;
-  animation-duration: 3s;
+    display: grid;
+    align-items: center;
+    font-family: "Prompt";
+    color: var(--white);
+    font-size: 4.375rem;
+    word-spacing: 0px;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+  }
 
-  display: flex;
-  align-items: center;
-  font-family: "Prompt";
-  color: var(--white);
-  font-size: 4.375rem;
-  word-spacing: 0px;
-  justify-content: center;
-  flex-direction: column;
-}
+  .nav-button {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+  }
 
-.info-sec {
-  font-size: 2.5rem;
-}
+  .front-end-dev {
+    font-family: "Courier New", Courier, monospace;
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 24, 24);
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid rgb(255, 255, 255); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0px; /* Adjust as needed */
+    animation: typing 3.5s steps(35, end), blink-caret 0.75s step-end infinite;
+  }
 
-.front-end-dev {
-  font-family: "Courier New", Courier, monospace;
-  background-color: var(--white);
-  color: black;
-}
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 7rem;
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(255, 255, 255);
+    }
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 7rem;
+  }
+
+  .card {
+    display: flex;
+    line-height: 20px;
+    min-width: 205px;
+    min-height: 60px;
+    flex-direction: column;
+    padding-right: 50px;
+  }
+
+  @media only screen and (max-width: 1154px) {
+    header {
+      font-size: 15px;
+    }
+
+    .logo {
+      width: 60px;
+    }
+
+    .card {
+      color: transparent;
+      padding-right: 0px;
+      min-height: 0px !important;
+      min-width: 0px;
+      height: 0px;
+      visibility: hidden;
+      width: 0px !important;
+    }
+
+    .container {
+      font-size: 3rem;
+    }
+  }
 }
